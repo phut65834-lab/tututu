@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chợ Măng Thít | Văn hóa miền Tây</title>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; }
+.serif { font-family: 'Playfair Display', serif; }
+
+/* Glass navbar */
+.glass {
+  background: rgba(255,255,255,.75);
+  backdrop-filter: blur(14px);
+}
+
+/* Card hover */
+.card {
+  transition: all .5s ease;
+}
+.card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(0,0,0,.25);
+}
+
+/* Image zoom */
+.img-box {
+  position: relative;
+  overflow: hidden;
+}
+.img-box img {
+  transition: transform .7s ease;
+}
+.img-box:hover img {
+  transform: scale(1.15);
+}
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.75), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: .4s;
+}
+.img-box:hover .img-overlay {
+  opacity: 1;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+
+<body class="bg-stone-50 text-stone-800">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed w-full z-50 glass border-b">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <span class="serif text-2xl text-orange-700">MĂNG THÍT</span>
+    <div class="space-x-6 text-sm font-semibold">
+      <a href="#home" class="hover:text-orange-600">Trang chủ</a>
+      <a href="#about" class="hover:text-orange-600">Giới thiệu</a>
+      <a href="#market" class="hover:text-orange-600">Chợ quê</a>
+      <a href="#food" class="hover:text-orange-600">Ẩm thực</a>
+      <a href="#map" class="hover:text-orange-600">Bản đồ</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="h-screen flex items-center justify-center text-white relative"
+style="background:url('https://images.unsplash.com/photo-1599708153386-62e24068352b?auto=format&fit=crop&w=1600&q=80') center/cover">
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="relative text-center px-6 reveal">
+    <h1 class="serif text-6xl md:text-8xl mb-6">Chợ Măng Thít</h1>
+    <p class="italic text-lg max-w-xl mx-auto text-stone-200">
+      Không gian văn hóa – ẩm thực – đời sống miền Tây sông nước
+    </p>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-24 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center reveal">
+  <div>
+    <h2 class="serif text-4xl mb-6">Câu chuyện Chợ Măng Thít</h2>
+    <p class="text-gray-600 leading-relaxed">
+      Chợ Măng Thít là trung tâm sinh hoạt lâu đời của người dân Vĩnh Long,
+      gắn liền với ghe xuồng, sông nước và nhịp sống buôn bán truyền thống.
+    </p>
+  </div>
+
+  <img
+    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
+    alt="Chợ quê miền Tây"
+    class="rounded-3xl shadow-2xl">
+</section>
+
+<!-- ================= MARKET ================= -->
+<section id="market" class="py-24 bg-stone-100">
+  <h2 class="serif text-4xl text-center mb-16 reveal">Sinh hoạt chợ quê</h2>
+
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+    <div class="card bg-white rounded-3xl overflow-hidden reveal">
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1600320254374-ce2d293c324e?auto=format&fit=crop&w=700&q=80">
+        <div class="img-overlay">GHE XUỒNG</div>
+      </div>
+      <div class="p-6">
+        <h3 class="font-bold text-xl">Buôn bán trên sông</h3>
+        <p class="text-sm text-gray-500">Nét văn hóa đặc trưng miền Tây</p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-3xl overflow-hidden reveal">
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1617191518100-cc8f6c9ed42c?auto=format&fit=crop&w=700&q=80">
+        <div class="img-overlay">CHỢ QUÊ</div>
+      </div>
+      <div class="p-6">
+        <h3 class="font-bold text-xl">Chợ sáng</h3>
+        <p class="text-sm text-gray-500">Nhộn nhịp từ sớm tinh mơ</p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-3xl overflow-hidden reveal">
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1598514982847-4d82d9fbd4b5?auto=format&fit=crop&w=700&q=80">
+        <div class="img-overlay">SÔNG NƯỚC</div>
+      </div>
+      <div class="p-6">
+        <h3 class="font-bold text-xl">Miền sông nước</h3>
+        <p class="text-sm text-gray-500">Cuộc sống gắn liền con nước</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOD ================= -->
+<section id="food" class="py-24">
+  <h2 class="serif text-4xl text-center mb-16 reveal">Ẩm thực miền Tây</h2>
+
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+    <div class="card bg-white rounded-3xl overflow-hidden reveal">
+      <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=700&q=80">
+      <div class="p-6">
+        <h3 class="font-bold text-xl">Bún mắm</h3>
+        <p class="text-sm text-gray-500">Đậm đà hương vị Nam Bộ</p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-3xl overflow-hidden reveal">
+      <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?auto=format&fit=crop&w=700&q=80">
+      <div class="p-6">
+        <h3 class="font-bold text-xl">Trái cây miệt vườn</h3>
+        <p class="text-sm text-gray-500">Tươi ngon theo mùa</p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-3xl overflow-hidden reveal">
+      <img src="https://images.unsplash.com/photo-1604909053177-3c55b7ff82d2?auto=format&fit=crop&w=700&q=80">
+      <div class="p-6">
+        <h3 class="font-bold text-xl">Bánh dân gian</h3>
+        <p class="text-sm text-gray-500">Hương vị truyền thống</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= MAP ================= -->
+<section id="map" class="py-24 text-center reveal">
+  <h2 class="serif text-4xl mb-8">Bản đồ Chợ Măng Thít</h2>
+  <iframe
+    class="mx-auto rounded-3xl shadow-2xl"
+    src="https://www.google.com/maps?q=Chợ%20Măng%20Thít&output=embed"
+    width="90%" height="380">
+  </iframe>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-6 text-center text-sm text-gray-500">
+  © 2026 – Website giới thiệu văn hóa Chợ Măng Thít
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('active');
+  });
+});
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
